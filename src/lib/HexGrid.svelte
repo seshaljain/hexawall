@@ -80,6 +80,7 @@
             stroke-width="8"
             on:click={() => toggleCell(row, col)}
             class="transition-colors duration-100 cursor-pointer"
+            role="button"
           />
         {/key}
       {/each}
@@ -111,44 +112,44 @@
     </svg>
     <!-- Mode Toggle: Small Circle with Minimal Icon -->
     <button
-  class="p-0 bg-transparent border-0 outline-none"
-  on:click={() => (darkMode = !darkMode)}
-  aria-label="Toggle dark/light mode"
-  title="Toggle dark/light mode"
-  style="line-height:0"
->
-  <svg width="44" height="44" viewBox="0 0 44 44" class="drop-shadow">
-    <circle
-      cx="22"
-      cy="22"
-      r="20"
-      fill={darkMode ? "var(--color-slate-800)" : "var(--color-yellow-50)"}
-      stroke={darkMode
-        ? "var(--color-yellow-300)"
-        : "var(--color-yellow-400)"}
-      stroke-width="0"
-    />
-    {#if darkMode}
-      <!-- Sun Icon: larger center, shorter rays, yellow-300 -->
-      <circle cx="22" cy="22" r="5" fill="#fde047"/>
-      <g stroke="#fde047" stroke-width="1.5" stroke-linecap="round">
-        <line x1="22" y1="13" x2="22" y2="10"/>
-        <line x1="22" y1="31" x2="22" y2="34"/>
-        <line x1="13" y1="22" x2="10" y2="22"/>
-        <line x1="31" y1="22" x2="34" y2="22"/>
-        <line x1="16.5" y1="16.5" x2="14.5" y2="14.5"/>
-        <line x1="27.5" y1="27.5" x2="29.5" y2="29.5"/>
-        <line x1="16.5" y1="27.5" x2="14.5" y2="29.5"/>
-        <line x1="27.5" y1="16.5" x2="29.5" y2="14.5"/>
-      </g>
-    {:else}
-      <!-- Minimal Moon Icon -->
-      <path
-        d="M27 22a7 7 0 1 1-7-7A5 5 0 0 0 27 22Z"
-        fill="var(--color-yellow-300)"
-      />
-    {/if}
-  </svg>
-</button>
+      class="p-0 bg-transparent border-0 outline-none"
+      on:click={() => (darkMode = !darkMode)}
+      aria-label="Toggle dark/light mode"
+      title="Toggle dark/light mode"
+      style="line-height:0"
+    >
+      <svg width="44" height="44" viewBox="0 0 44 44" class="drop-shadow">
+        <circle
+          cx="22"
+          cy="22"
+          r="20"
+          fill={darkMode ? "var(--color-slate-800)" : "var(--color-yellow-50)"}
+          stroke={darkMode
+            ? "var(--color-yellow-300)"
+            : "var(--color-yellow-400)"}
+          stroke-width="0"
+        />
+        {#if darkMode}
+          <!-- Sun Icon: larger center, shorter rays, yellow-300 -->
+          <circle cx="22" cy="22" r="5" fill="#fde047" />
+          <g stroke="#fde047" stroke-width="1.5" stroke-linecap="round">
+            <line x1="22" y1="13" x2="22" y2="10" />
+            <line x1="22" y1="31" x2="22" y2="34" />
+            <line x1="13" y1="22" x2="10" y2="22" />
+            <line x1="31" y1="22" x2="34" y2="22" />
+            <line x1="16.5" y1="16.5" x2="14.5" y2="14.5" />
+            <line x1="27.5" y1="27.5" x2="29.5" y2="29.5" />
+            <line x1="16.5" y1="27.5" x2="14.5" y2="29.5" />
+            <line x1="27.5" y1="16.5" x2="29.5" y2="14.5" />
+          </g>
+        {:else}
+          <!-- Minimal Moon Icon -->
+          <path
+            d="M27 22a7 7 0 1 1-7-7A5 5 0 0 0 27 22Z"
+            fill="var(--color-yellow-300)"
+          />
+        {/if}
+      </svg>
+    </button>
   </div>
 </div>
